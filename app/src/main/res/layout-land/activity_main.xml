@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#232426"
+    android:orientation="vertical">
+
+    <TextView
+        android:paddingRight="20dp"
+        android:fontFamily="@font/roboto_regular"
+        android:id="@+id/textViewTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:text=""
+        />
+
+    <EditText
+        android:padding="15dp"
+        android:fontFamily="@font/roboto_regular"
+        android:id="@+id/editTextTop"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#232426"
+        android:ems="10"
+        android:gravity="center|right"
+        android:inputType="none"
+        android:maxLength="25"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="40sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:weightSum="4"
+            android:layout_height="match_parent">
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:id="@+id/buttonPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#353535"
+                android:fontFamily="@font/roboto_regular"
+                android:onClick="numberEvent"
+                android:text="%"
+                android:textColor="@color/white"
+                android:textSize="20sp">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/buttonAC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#353535"
+                android:onClick="reset"
+                android:text="C"
+                android:textColor="@color/white"
+                android:textSize="20sp">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:id="@+id/buttonBackSpace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#353535"
+                android:fontFamily="@font/roboto_regular"
+                android:onClick="backspaceButton"
+                android:text="\u232b"
+                android:textColor="@color/white"
+                android:textSize="20sp">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/buttonDivide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#353535"
+                android:onClick="operatorEvent"
+                android:text="\u00F7"
+                android:textColor="@color/white"
+                android:textSize="20sp">
+
+            </Button>
+
+        </TableRow>
+
+        <TableRow
+            android:weightSum="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:id="@+id/button7"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:fontFamily="@font/roboto_regular"
+                android:text="7">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:id="@+id/button8"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:fontFamily="@font/roboto_regular"
+                android:text="8">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:backgroundTint="#99000000"
+                android:fontFamily="@font/roboto_regular"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="20sp">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/buttonMultiply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#353535"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:onClick="operatorEvent"
+                android:text="\u00D7">
+
+            </Button>
+
+
+        </TableRow>
+
+        <TableRow
+            android:weightSum="4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:fontFamily="@font/roboto_regular"
+                android:text="4">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:fontFamily="@font/roboto_regular"
+                android:text="5">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:fontFamily="@font/roboto_regular"
+                android:text="6">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/buttonMinus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#353535"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:onClick="operatorEvent"
+                android:text="-">
+
+            </Button>
+
+
+        </TableRow>
+
+        <TableRow
+            android:weightSum="4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:fontFamily="@font/roboto_regular"
+                android:text="1">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:fontFamily="@font/roboto_regular"
+                android:text="2">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:fontFamily="@font/roboto_regular"
+                android:text="3">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/buttonPlus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#353535"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:onClick="operatorEvent"
+                android:text="+">
+
+            </Button>
+
+        </TableRow>
+
+
+        <TableRow
+            android:weightSum="4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:id="@+id/buttonPlusMinus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:onClick="numberEvent"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:fontFamily="@font/roboto_regular"
+                android:text="\u207A/-">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:id="@+id/button0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:fontFamily="@font/roboto_regular"
+                android:text="0">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:id="@+id/buttonDot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#070707"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="numberEvent"
+                android:fontFamily="@font/roboto_regular"
+                android:text=".">
+
+            </Button>
+
+            <Button
+                app:backgroundTint="@null"
+                android:background="@drawable/operation_button"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/buttonEqual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="#834343"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="resultEvent"
+                android:text="\u003D">
+
+            </Button>
+
+        </TableRow>
+
+    </TableLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <Button-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/operation_button"-->
+<!--            android:layout_marginVertical="10dp"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:id="@+id/buttonPercent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:text="%"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/operation_button"-->
+<!--            android:layout_marginVertical="10dp"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:id="@+id/buttonAC"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="reset"-->
+<!--            android:text="C"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/operation_button"-->
+<!--            android:layout_marginVertical="10dp"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:id="@+id/buttonBackSpace"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:onClick="backspaceButton"-->
+<!--            android:text="\u232b"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/operation_button"-->
+<!--            android:layout_marginVertical="10dp"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:id="@+id/buttonDivide"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="operatorEvent"-->
+<!--            android:text="\u00F7"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp">-->
+
+<!--        </Button>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button7"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="7">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button8"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="8">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button9"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="9">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/operation_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:id="@+id/buttonMultiply"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="operatorEvent"-->
+<!--            android:text="\u00D7">-->
+
+<!--        </Button>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button4"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="4">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button5"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="5">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button6"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="6">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/operation_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:id="@+id/buttonMinus"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="operatorEvent"-->
+<!--            android:text="-">-->
+
+<!--        </Button>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button1"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="1">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button2"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="2">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button3"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="3">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/operation_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:id="@+id/buttonPlus"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="operatorEvent"-->
+<!--            android:text="+">-->
+
+<!--        </Button>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/buttonPlusMinus"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="\u207A/-">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button0"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="0">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/buttonDot"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/number_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="numberEvent"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text=".">-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:background="@drawable/operation_button"-->
+<!--            android:layout_marginVertical="5dp"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:id="@+id/buttonEqual"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:backgroundTint="#834343"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:onClick="resultEvent"-->
+<!--            android:text="\u003D">-->
+
+<!--        </Button>-->
+
+<!--    </LinearLayout>-->
+
+
+
+
+
+
+
+
+</LinearLayout>
